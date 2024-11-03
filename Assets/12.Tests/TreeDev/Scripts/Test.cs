@@ -4,27 +4,35 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    public GameObject target;
+    public GameObject tree;
+    private TreeManager treeManager;
     
     // Start is called before the first frame update
     void Start()
     {
+        treeManager = tree.GetComponent<TreeManager>();
+        if (!treeManager)
+        {
+            Debug.LogError("TreeManager is null");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit raycastHit, 100f))
-            {
-                if (raycastHit.transform)
-                {
-                    //Our custom method.
-                    Cutter.Cut(raycastHit.transform.gameObject, raycastHit.point, Vector3.up);
-                }
-            }
+            treeManager.Collapse();
+        }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            treeManager.Grow();
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            treeManager.Shrink();
         }
     }
 }
