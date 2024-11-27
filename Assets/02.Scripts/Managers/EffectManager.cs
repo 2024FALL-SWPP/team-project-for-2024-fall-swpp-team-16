@@ -1,71 +1,104 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EffectManager : MonoBehaviour
 {
-    [SerializeField] private ParticleSystem effectPrefab;
-    private ParticleSystem activeEffect;
-    
-    private List<Color> activeColors = new List<Color>();
-    private float colorSwitchInterval = 0.5f;  // 색상 전환 간격 (초)
+    [SerializeField] private ParticleSystem ripplesEffectPrefab;
+    [SerializeField] private float colorSwitchInterval = 0.5f;
     private float colorSwitchTimer;
+    private float defaultSize = 7;
+    private float targetScaleMultiplier = 1.5f;
     
-    private float defaultSize = 4;
-
-    public void TriggerRipples(Vector3 position, Transform target, ColorType colorType, Vector3 targetScale)
+    
+    public void TriggerRipples(Transform target, Color color, Vector3 targetScale, float heightRatio = 0.5f)
     {
-        Color color = GameManager.colors[(int)colorType];
-        if (!activeColors.Contains(color))
-            activeColors.Add(color);
-
-        if (activeEffect == null)
+        if (!GameManager.pm.activeRipplesEffects.ContainsKey(target))
         {
-            activeEffect = Instantiate(effectPrefab, position, Quaternion.identity);
-            activeEffect.transform.SetParent(target);
+            ParticleSystem newEffect = Instantiate(ripplesEffectPrefab, target.position, Quaternion.identity);
+            Bounds totalBounds = new Bounds(target.position, Vector3.zero);
+            Renderer[] renderers = target.GetComponentsInChildren<Renderer>();
+            foreach (Renderer renderer in renderers)
+            {
+                totalBounds.Encapsulate(renderer.bounds);
+            }
+
+            // 높이 비율(heightRatio)을 이용해 y축 위치를 조정합니다.
+            float effectYPosition = totalBounds.min.y + totalBounds.size.y * heightRatio;
+            newEffect.transform.position = new Vector3(totalBounds.center.x, effectYPosition, totalBounds.center.z);
+            newEffect.transform.SetParent(target, true);
+
+            GameManager.pm.activeRipplesEffects[target] = newEffect;
+            GameManager.pm.activeRipplesColors[target] = new List<Color>();
         }
 
-        activeEffect.transform.position = position;
-        float maxScale = Mathf.Max(targetScale.x, targetScale.y, targetScale.z);
+        if (!GameManager.pm.activeRipplesColors[target].Contains(color))
+        {
+            GameManager.pm.activeRipplesColors[target].Add(color);
+        }
+
+        ParticleSystem activeEffect = GameManager.pm.activeRipplesEffects[target];
         var mainModule = activeEffect.main;
-        mainModule.startSize = maxScale*defaultSize;
+        mainModule.startSize = Mathf.Max(targetScale.x, targetScale.y, targetScale.z) * defaultSize;
 
         if (!activeEffect.isPlaying)
             activeEffect.Play();
     }
 
-    public void RemoveColorFromRipples(ColorType colorType)
+
+    public void RemoveColorFromRipples(Transform target, Color color)
     {
-        Color color = GameManager.colors[(int)colorType];
-        activeColors.Remove(color);  // 특정 색상을 리스트에서 제거
+        if (GameManager.pm.activeRipplesColors.ContainsKey(target))
+        {
+            GameManager.pm.activeRipplesColors[target].Remove(color);
+        }
     }
 
-    public void StopRipples()
+    public void StopRipples(Transform target)
     {
-        if (activeEffect != null && activeEffect.isPlaying)
+        if (GameManager.pm.activeRipplesEffects.ContainsKey(target) && GameManager.pm.activeRipplesEffects[target].isPlaying)
         {
-            activeEffect.Stop();
+            GameManager.pm.activeRipplesEffects[target].Stop();
         }
-        activeColors.Clear();  // 키가 떼어지면 색상 목록 초기화
-    }
-    
-    private void Update()
-    {
-        if (activeColors.Count > 0)
+
+        if (GameManager.pm.activeRipplesColors.ContainsKey(target))
         {
-            colorSwitchTimer += Time.deltaTime;
-            if (colorSwitchTimer >= colorSwitchInterval)
+            GameManager.pm.activeRipplesColors[target].Clear();
+        }
+        
+        if (target == GameManager.pm.currentTarget)
+        {
+            GameManager.pm.currentTarget = null;
+        }
+    }
+
+    private void makeRipples()
+    {
+        colorSwitchTimer += Time.deltaTime;
+        
+        if (colorSwitchTimer >= colorSwitchInterval)
+        {
+            colorSwitchTimer = 0f;
+            
+            foreach (var entry in GameManager.pm.activeRipplesEffects)
             {
-                colorSwitchTimer = 0f;
-                
-                var mainModule = activeEffect.main;
-                mainModule.startColor = activeColors[0];
-                
-                Color firstColor = activeColors[0];
-                activeColors.RemoveAt(0);
-                activeColors.Add(firstColor);
+                Transform target = entry.Key;
+                ParticleSystem effect = entry.Value;
+
+                if (GameManager.pm.activeRipplesColors.ContainsKey(target) && GameManager.pm.activeRipplesColors[target].Count > 0)
+                {
+                    var mainModule = effect.main;
+                    mainModule.startColor = GameManager.pm.activeRipplesColors[target][0];
+                    
+                    Color firstColor = GameManager.pm.activeRipplesColors[target][0];
+                    GameManager.pm.activeRipplesColors[target].RemoveAt(0);
+                    GameManager.pm.activeRipplesColors[target].Add(firstColor);
+                }
             }
         }
     }
 
+    private void Update()
+    {
+        makeRipples();
+    }
 }

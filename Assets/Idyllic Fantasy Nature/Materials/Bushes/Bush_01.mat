@@ -114,7 +114,7 @@ Material:
     - _BOOLEAN_1: 0
     - _Bend: 0
     - _Bend_Range: 1
-    - _Bend_Strength: 0.7
+    - _Bend_Strength: 0.245
     - _Blend: 0
     - _BlendHeight: 0.8
     - _BlendModePreserveSpecular: 0
@@ -156,7 +156,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Start_Bend_Range: 0.4
+    - _Start_Bend_Range: 0.508
     - _Start_To_Bend_Range: 1
     - _Start_to_bend_range: 1
     - _Surface: 0
