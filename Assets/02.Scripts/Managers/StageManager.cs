@@ -6,6 +6,7 @@ using UnityEngine;
 public class StageManager : MonoBehaviour
 {
     public int totalStages = 10; // Set this to the total number of stages
+    public int currentStage = 0; // Set this to the current stage number
     
     private string filePath;
     private bool[] accomplishedStages;
@@ -44,6 +45,16 @@ public class StageManager : MonoBehaviour
             Debug.Log("No progress file found. Creating a new one.");
             SaveStages();
         }
+    }
+    
+    public void SetCurrentStage(int stage)
+    {
+        currentStage = stage;
+    }
+    
+    public void CompleteCurrentStage()
+    {
+        CompleteStage(currentStage);
     }
     
     public void CompleteStage(int stage)

@@ -161,6 +161,9 @@ public class EffectManager : MonoBehaviour
 
     private void Update()
     {
-        makeRipples();
+        if (GameManager.pm is not null)
+        {
+            makeRipples();
+        }
     }
 }

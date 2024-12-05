@@ -63,6 +63,7 @@ public class DoorController : MonoBehaviour
                         if (playedNotes.Count == answerNotes.Length)
                         {
                             Debug.Log("Correct notes played. Door is opening.");
+                            GameManager.stm.CompleteCurrentStage();
                             StartCoroutine(OpenDoor());
                             playedNotes.Clear();
                         }

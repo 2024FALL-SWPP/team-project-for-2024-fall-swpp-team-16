@@ -38,6 +38,11 @@ namespace Collections.Shaders.CircleTransition
             StartCoroutine(CloseBlackScreenCoroutine(4, 0.3f, 0.2f, 0.4f));
             StartCoroutine(CloseBlackScreenCoroutine(4.5f, 0.3f, 0.4f, 0.0f));
         }
+
+        public void FadeOut()
+        {
+            StartCoroutine(OpenBlackScreenCoroutine(0, 2.0f, 0.1f, 1.0f));
+        }
         
         private IEnumerator OpenBlackScreenCoroutine(float delay, float duration = -1, float startRadius = -1, float endRadius = -1)
         {
@@ -74,7 +79,15 @@ namespace Collections.Shaders.CircleTransition
             var screenWidth = Screen.width;
             var screenHeight = Screen.height;
 
-            var playerScreenPos = Camera.main.WorldToScreenPoint(player.position);
+            var playerScreenPos = Vector2.zero;
+            if (player == null)
+            {
+                playerScreenPos = new Vector2(screenWidth * 0.5f, screenHeight * 0.5f);
+            }
+            else
+            {
+                playerScreenPos = Camera.main.WorldToScreenPoint(player.position);
+            }
 
             var canvasRect = _canvas.GetComponent<RectTransform>().rect;
             var canvasWidth = canvasRect.width;
