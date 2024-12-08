@@ -64,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
         playerTransform = transform.Find("Player");
         playerAnimator = playerTransform.GetComponent<Animator>();
         playerMeshRenderer = playerTransform.GetComponentInChildren<Renderer>();
+        _lastStablePosition = transform.position;
     }
 
     // Update is called once per frame
