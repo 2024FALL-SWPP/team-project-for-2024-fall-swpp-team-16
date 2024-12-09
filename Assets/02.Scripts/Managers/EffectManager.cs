@@ -130,7 +130,10 @@ public class EffectManager : MonoBehaviour
     private IEnumerator DestroyAfterDuration(ParticleSystem effect, Transform target)
     {
         yield return new WaitForSeconds(effect.main.duration/2); // duration만큼 대기
-        Destroy(effect.gameObject); // 파티클 오브젝트 제거
+        if (effect)
+        {
+            Destroy(effect.gameObject); // 파티클 오브젝트 제거
+        }
     }
 
 
