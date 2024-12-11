@@ -3,15 +3,20 @@ using UnityEngine.UI;
 
 public class SettingsModalController : MonoBehaviour
 {
+    [Header("Modal Background")]
     public Sprite backgroundSprite = null;
-	public Sprite closeButtonSprite = null;
-	public Sprite quitButtonSprite = null;
-	public Sprite settingsButtonSprite = null;
+
+    [Header("Button Sprites")]
+    public Sprite closeButtonSprite = null;
+    public Sprite quitButtonSprite = null;
+    public Sprite settingsButtonSprite = null;
+
+    [Header("Slider Sprites (Optional)")]
+    public Sprite sliderBackgroundSprite = null;
+    public Sprite sliderHandleSprite = null;
 
     private GameObject canvas;
     private GameObject settingsModal;
-    private Slider soundSlider;
-    private Slider bgmSlider;
 
     void Start()
     {
@@ -28,7 +33,7 @@ public class SettingsModalController : MonoBehaviour
 
     private void CreateUI()
     {
-        // Create Canvas
+        // Create or find Canvas
         canvas = GameObject.FindWithTag("MainCanvas");
         if (canvas == null)
         {
@@ -47,21 +52,23 @@ public class SettingsModalController : MonoBehaviour
         settingsModal.transform.SetParent(canvas.transform, false);
         RectTransform modalRect = settingsModal.GetComponent<RectTransform>();
         modalRect.sizeDelta = new Vector2(700, 600);
-        
+
         Image modalImage = settingsModal.GetComponent<Image>();
         if (backgroundSprite != null)
         {
             modalImage.sprite = backgroundSprite;
             modalImage.color = Color.white;
+            modalImage.preserveAspect = true;
         }
         else
         {
             modalImage.color = Color.black;
         }
         settingsModal.SetActive(false);
-
+        
         // Close Button
-        GameObject closeButton = CreateButton("CloseButton", "X", new Vector2(200, 250), settingsModal.transform, closeButtonSprite);
+        GameObject closeButton = CreateButton("CloseButton", "X", new Vector2(265, 234), settingsModal.transform, closeButtonSprite);
+        
         closeButton.GetComponent<Button>().onClick.AddListener(CloseModal);
 
         // Quit Button
@@ -69,27 +76,46 @@ public class SettingsModalController : MonoBehaviour
         quitButton.GetComponent<Button>().onClick.AddListener(QuitGame);
 
         // Master Volume Slider
-        CreateSlider("MasterVolumeSlider", "Master Volume", new Vector2(0, 100), settingsModal.transform, AdjustSoundLevel, AudioListener.volume);
+        CreateSlider("MasterVolumeSlider", "Master Volume", new Vector2(-10, 100), settingsModal.transform, AdjustSoundLevel, AudioListener.volume);
 
         // BGM Volume Slider
-        CreateSlider("BGMVolumeSlider", "BGM Volume", new Vector2(0, 0), settingsModal.transform, AdjustBgmVolume, GameManager.sm.masterVolumeBgm);
+        CreateSlider("BGMVolumeSlider", "BGM Volume", new Vector2(-10, 0), settingsModal.transform, AdjustBgmVolume, GameManager.sm.masterVolumeBgm);
 
         // SFX Volume Slider
-        CreateSlider("SFXVolumeSlider", "SFX Volume", new Vector2(0, -100), settingsModal.transform, AdjustSfxVolume, GameManager.sm.masterVolumeSfx);
+        CreateSlider("SFXVolumeSlider", "SFX Volume", new Vector2(-10, -100), settingsModal.transform, AdjustSfxVolume, GameManager.sm.masterVolumeSfx);
 
         // Settings Button
-        GameObject settingsButton = CreateButton("SettingsButton", "Settings", new Vector2(800, 400), canvas.transform, settingsButtonSprite);
+        GameObject settingsButton = CreateButton("SettingsButton", "Settings", new Vector2(850, 500), canvas.transform, settingsButtonSprite);
         settingsButton.GetComponent<Button>().onClick.AddListener(ToggleSettings);
     }
 
-    private GameObject CreateButton(string name, string buttonText, Vector2 position, Transform parent, Sprite buttonSprite)
+   private GameObject CreateButton(string name, string buttonText, Vector2 position, Transform parent, Sprite buttonSprite)
     {
         GameObject button = new GameObject(name, typeof(Button), typeof(Image));
         button.transform.SetParent(parent, false);
 
         RectTransform rectTransform = button.GetComponent<RectTransform>();
-        rectTransform.sizeDelta = new Vector2(200, 50);
-        rectTransform.anchoredPosition = position;
+
+        if (name == "CloseButton" || name == "SettingsButton")
+        {
+            rectTransform.sizeDelta = new Vector2(300, 75); // This remains constant in pixels now
+        }
+        else
+        {
+            rectTransform.sizeDelta = new Vector2(200, 50);
+        }
+
+        if (name == "SettingsButton")
+        {
+            rectTransform.anchorMin = new Vector2(1f, 1f);
+            rectTransform.anchorMax = new Vector2(1f, 1f);
+            rectTransform.pivot = new Vector2(1f, 1f);
+            rectTransform.anchoredPosition = new Vector2(-50, -50);
+        }
+        else
+        {
+            rectTransform.anchoredPosition = position;
+        }
 
         Button btnComponent = button.GetComponent<Button>();
         Image btnImage = button.GetComponent<Image>();
@@ -98,13 +124,11 @@ public class SettingsModalController : MonoBehaviour
         if (buttonSprite != null)
         {
             btnImage.sprite = buttonSprite;
+            btnImage.preserveAspect = true;
         }
         else
         {
-            // If no sprite, set a default background color
             btnImage.color = Color.gray;
-
-            // Add text directly to button if no sprite
             GameObject textObject = CreateText(name + "Text", buttonText, Vector2.zero, button.transform);
             Text textComponent = textObject.GetComponent<Text>();
             textComponent.alignment = TextAnchor.MiddleCenter;
@@ -129,13 +153,21 @@ public class SettingsModalController : MonoBehaviour
         slider.value = initialValue;
         slider.onValueChanged.AddListener(onChange);
 
-		// Disable Navigation
-    	var navigation = slider.navigation;
-    	navigation.mode = Navigation.Mode.None; // Disable arrow key and gamepad navigation
-    	slider.navigation = navigation;
+        // Disable Navigation
+        var navigation = slider.navigation;
+        navigation.mode = Navigation.Mode.None; 
+        slider.navigation = navigation;
 
         Image sliderBackground = sliderObject.AddComponent<Image>();
-        sliderBackground.color = Color.gray;
+        if (sliderBackgroundSprite != null)
+        {
+            sliderBackground.sprite = sliderBackgroundSprite;
+            sliderBackground.preserveAspect = true;
+        }
+        else
+        {
+            sliderBackground.color = Color.gray;
+        }
 
         GameObject handleObject = new GameObject("Handle", typeof(Image));
         handleObject.transform.SetParent(sliderObject.transform);
@@ -144,7 +176,15 @@ public class SettingsModalController : MonoBehaviour
         handleRect.anchoredPosition = Vector2.zero;
 
         Image handleImage = handleObject.GetComponent<Image>();
-        handleImage.color = Color.white;
+        if (sliderHandleSprite != null)
+        {
+            handleImage.sprite = sliderHandleSprite;
+            handleImage.preserveAspect = true;
+        }
+        else
+        {
+            handleImage.color = Color.white;
+        }
 
         slider.targetGraphic = handleImage;
         slider.handleRect = handleRect;
@@ -163,7 +203,7 @@ public class SettingsModalController : MonoBehaviour
         textComponent.text = text;
         textComponent.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
         textComponent.fontSize = 24;
-        textComponent.color = Color.white;
+        textComponent.color = Color.black;
 
         return textObject;
     }
@@ -173,18 +213,23 @@ public class SettingsModalController : MonoBehaviour
         settingsModal.SetActive(!settingsModal.activeSelf);
         if (settingsModal.activeSelf)
         {
-            FindObjectOfType<CameraMovement>().SetCursorVisible();
+            // Ensure mouse is visible
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
         else
         {
-            FindObjectOfType<CameraMovement>().SetCursorInvisible();
+            // Hide mouse when not in settings
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
     public void CloseModal()
     {
         settingsModal.SetActive(false);
-        FindObjectOfType<CameraMovement>().SetCursorInvisible();
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void QuitGame()
@@ -206,8 +251,8 @@ public class SettingsModalController : MonoBehaviour
         GameManager.sm.SetVolumeBGM(value);
     }
 
-	public void AdjustSfxVolume(float value)
-	{
-    	GameManager.sm.SetVolumeSFX(value);
-	}
+    public void AdjustSfxVolume(float value)
+    {
+        GameManager.sm.SetVolumeSFX(value);
+    }
 }

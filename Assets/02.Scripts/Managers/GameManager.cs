@@ -76,6 +76,9 @@ public class GameManager : MonoBehaviour
         {
             em.NoEffectOnCt();
         }
+        // locks cursor and makes it invisible
+        Cursor.lockState = Cursor.lockState;
+        Cursor.visible = false;
         
         im.OnSceneLoaded();
     }

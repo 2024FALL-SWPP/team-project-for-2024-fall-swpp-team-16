@@ -10,12 +10,14 @@ public class SoundManager : MonoBehaviour
     [Header ("Volume")]
     public float masterVolumeSfx = 1f;
     public float masterVolumeBgm = 1f;
-
+    private float basicPitchVolume = 0.2f;
+    
     [Header("Others")]
     [SerializeField] AudioClip bgmClip; // Specific bgmSource
     [SerializeField] AudioClip[] audioClip;
 
-    [Header("Pitch")] [SerializeField] private GameObject[] pitches;
+    [Header("Pitch")]
+    [SerializeField] private GameObject[] pitches;
     
     Dictionary<string, AudioClip> audioClipsDic;
 
@@ -36,6 +38,8 @@ public class SoundManager : MonoBehaviour
         {
             audioClipsDic.Add(a.name, a);
         }
+        
+        UpdatePitchVolumes();
     }
     
     private void SetupBGM()
@@ -57,6 +61,19 @@ public class SoundManager : MonoBehaviour
         if (bgmPlayer != null) bgmPlayer.Play();
     }
 
+    
+    private void UpdatePitchVolumes()
+    {
+        foreach (GameObject pitch in pitches)
+        {
+            AudioSource audioSource = pitch.GetComponent<AudioSource>();
+            if (audioSource != null)
+            {
+                audioSource.volume = basicPitchVolume * masterVolumeSfx;
+            }
+        }
+    }
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -246,6 +263,7 @@ public class SoundManager : MonoBehaviour
     public void SetVolumeSFX(float a_volume)
     {
         masterVolumeSfx = a_volume;
+        UpdatePitchVolumes();
     }
 
     public void SetVolumeBGM(float a_volume)
