@@ -28,7 +28,7 @@ public class TreeController : Interactable
     private bool isPlayingSound = false;
     private GameObject _movingSound;
 
-    private void OnValidate()
+    private void Start()
     {
         Assert.IsNotNull(treePrefab, "TreePrefab cannot be null.");
         Assert.IsTrue(treePrefab.TryGetComponent<MeshFilter>(out _), "TreePrefab must have MeshFilter component.");
