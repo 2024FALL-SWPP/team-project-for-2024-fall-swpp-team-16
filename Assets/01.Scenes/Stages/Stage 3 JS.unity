@@ -177,7 +177,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen4 (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8261462016078588118, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
 --- !u!1 &19873440
 GameObject:
@@ -343,7 +344,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen5 (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5433648144385542019, guid: 98cf862fd6ec06341b813f74c54af10d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 98cf862fd6ec06341b813f74c54af10d, type: 3}
 --- !u!1001 &75796597
 PrefabInstance:
@@ -400,7 +402,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8272228187407873125, guid: b14540b09a764c44681ab799bcae9776, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b14540b09a764c44681ab799bcae9776, type: 3}
 --- !u!1001 &124144434
 PrefabInstance:
@@ -457,7 +460,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8272228187407873125, guid: b14540b09a764c44681ab799bcae9776, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b14540b09a764c44681ab799bcae9776, type: 3}
 --- !u!4 &131779158 stripped
 Transform:
@@ -524,7 +528,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8272228187407873125, guid: b14540b09a764c44681ab799bcae9776, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b14540b09a764c44681ab799bcae9776, type: 3}
 --- !u!4 &185443229 stripped
 Transform:
@@ -586,7 +591,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen4 (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8261462016078588118, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
 --- !u!4 &213678343 stripped
 Transform:
@@ -648,7 +654,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen4 (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8261462016078588118, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
 --- !u!4 &230775029 stripped
 Transform:
@@ -742,7 +749,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8272228187407873125, guid: b14540b09a764c44681ab799bcae9776, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b14540b09a764c44681ab799bcae9776, type: 3}
 --- !u!4 &234088955 stripped
 Transform:
@@ -809,7 +817,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8272228187407873125, guid: b14540b09a764c44681ab799bcae9776, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b14540b09a764c44681ab799bcae9776, type: 3}
 --- !u!1001 &287226723
 PrefabInstance:
@@ -866,7 +875,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7676452075470399370, guid: 806886f5c38c715468ad365ca10ec29a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 806886f5c38c715468ad365ca10ec29a, type: 3}
 --- !u!4 &287226724 stripped
 Transform:
@@ -1197,8 +1207,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 3, z: 20}
-  m_Center: {x: 2, y: -3, z: 0}
+  m_Size: {x: 2, y: 12, z: 30}
+  m_Center: {x: 2, y: -1, z: 0}
 --- !u!1001 &421526593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1254,7 +1264,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen4 (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8261462016078588118, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
 --- !u!4 &436082237 stripped
 Transform:
@@ -1321,7 +1332,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8272228187407873125, guid: b14540b09a764c44681ab799bcae9776, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b14540b09a764c44681ab799bcae9776, type: 3}
 --- !u!1001 &444052697
 PrefabInstance:
@@ -1378,7 +1390,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen5 (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5433648144385542019, guid: 98cf862fd6ec06341b813f74c54af10d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 98cf862fd6ec06341b813f74c54af10d, type: 3}
 --- !u!1001 &445323901
 PrefabInstance:
@@ -1435,7 +1448,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5433648144385542019, guid: 98cf862fd6ec06341b813f74c54af10d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 98cf862fd6ec06341b813f74c54af10d, type: 3}
 --- !u!4 &445323902 stripped
 Transform:
@@ -1655,7 +1669,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen5 (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5433648144385542019, guid: 98cf862fd6ec06341b813f74c54af10d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 98cf862fd6ec06341b813f74c54af10d, type: 3}
 --- !u!1001 &543538088
 PrefabInstance:
@@ -1712,7 +1727,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8272228187407873125, guid: b14540b09a764c44681ab799bcae9776, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b14540b09a764c44681ab799bcae9776, type: 3}
 --- !u!4 &567097239 stripped
 Transform:
@@ -1821,7 +1837,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8272228187407873125, guid: b14540b09a764c44681ab799bcae9776, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b14540b09a764c44681ab799bcae9776, type: 3}
 --- !u!4 &593076326 stripped
 Transform:
@@ -2130,7 +2147,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8272228187407873125, guid: b14540b09a764c44681ab799bcae9776, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b14540b09a764c44681ab799bcae9776, type: 3}
 --- !u!1 &653472691
 GameObject:
@@ -2388,7 +2406,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8272228187407873125, guid: b14540b09a764c44681ab799bcae9776, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b14540b09a764c44681ab799bcae9776, type: 3}
 --- !u!1 &735751797
 GameObject:
@@ -2614,7 +2633,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen3 (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2367233365053407488, guid: 58e605a958f82514198814dd47268a09, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 58e605a958f82514198814dd47268a09, type: 3}
 --- !u!4 &847784796 stripped
 Transform:
@@ -2676,7 +2696,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen4 (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8261462016078588118, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
 --- !u!1001 &864448198
 PrefabInstance:
@@ -2795,7 +2816,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8272228187407873125, guid: b14540b09a764c44681ab799bcae9776, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b14540b09a764c44681ab799bcae9776, type: 3}
 --- !u!1001 &924563825
 PrefabInstance:
@@ -2989,7 +3011,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen3 (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2367233365053407488, guid: 58e605a958f82514198814dd47268a09, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 58e605a958f82514198814dd47268a09, type: 3}
 --- !u!1001 &981049280
 PrefabInstance:
@@ -3046,7 +3069,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8272228187407873125, guid: b14540b09a764c44681ab799bcae9776, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b14540b09a764c44681ab799bcae9776, type: 3}
 --- !u!4 &990780377 stripped
 Transform:
@@ -3096,8 +3120,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 3, z: 40}
-  m_Center: {x: 2, y: -3, z: 0}
+  m_Size: {x: 2, y: 12, z: 40}
+  m_Center: {x: 2, y: -1, z: 0}
 --- !u!1001 &1013155528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3153,7 +3177,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen3 (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2367233365053407488, guid: 58e605a958f82514198814dd47268a09, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 58e605a958f82514198814dd47268a09, type: 3}
 --- !u!4 &1028096468 stripped
 Transform:
@@ -3412,7 +3437,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen3 (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2367233365053407488, guid: 58e605a958f82514198814dd47268a09, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 58e605a958f82514198814dd47268a09, type: 3}
 --- !u!1001 &1116173088
 PrefabInstance:
@@ -3655,7 +3681,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8261462016078588118, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
 --- !u!4 &1218035191 stripped
 Transform:
@@ -3774,7 +3801,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7676452075470399370, guid: 806886f5c38c715468ad365ca10ec29a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 806886f5c38c715468ad365ca10ec29a, type: 3}
 --- !u!4 &1226250355 stripped
 Transform:
@@ -3836,7 +3864,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen4 (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8261462016078588118, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
 --- !u!1 &1234081717
 GameObject:
@@ -3969,7 +3998,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8272228187407873125, guid: b14540b09a764c44681ab799bcae9776, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b14540b09a764c44681ab799bcae9776, type: 3}
 --- !u!1001 &1273044280
 PrefabInstance:
@@ -4312,8 +4342,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 3, z: 40}
-  m_Center: {x: 2, y: -3, z: 0}
+  m_Size: {x: 6.2130604, y: 12, z: 40}
+  m_Center: {x: 4.1065297, y: -3, z: 0.000000027678901}
 --- !u!1001 &1360823135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4369,7 +4399,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen4 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8261462016078588118, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
 --- !u!4 &1360823136 stripped
 Transform:
@@ -4431,7 +4462,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen3 (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2367233365053407488, guid: 58e605a958f82514198814dd47268a09, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 58e605a958f82514198814dd47268a09, type: 3}
 --- !u!1001 &1406595100
 PrefabInstance:
@@ -4488,7 +4520,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen5 (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5433648144385542019, guid: 98cf862fd6ec06341b813f74c54af10d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 98cf862fd6ec06341b813f74c54af10d, type: 3}
 --- !u!1001 &1433551019
 PrefabInstance:
@@ -4602,7 +4635,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen4 (13)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8261462016078588118, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
 --- !u!1001 &1454290637
 PrefabInstance:
@@ -4704,8 +4738,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 3, z: 20}
-  m_Center: {x: 2, y: -3, z: 0}
+  m_Size: {x: 2, y: 12, z: 20}
+  m_Center: {x: 2, y: 0, z: 0}
 --- !u!1001 &1465931881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4761,7 +4795,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen3 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2367233365053407488, guid: 58e605a958f82514198814dd47268a09, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 58e605a958f82514198814dd47268a09, type: 3}
 --- !u!4 &1465931882 stripped
 Transform:
@@ -4955,7 +4990,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen4 (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8261462016078588118, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
 --- !u!1001 &1554714683
 PrefabInstance:
@@ -5457,7 +5493,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen4 (12)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8261462016078588118, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
 --- !u!1001 &1655819335
 PrefabInstance:
@@ -5514,7 +5551,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen4 (14)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8261462016078588118, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
 --- !u!1001 &1713316578
 PrefabInstance:
@@ -5571,7 +5609,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8272228187407873125, guid: b14540b09a764c44681ab799bcae9776, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b14540b09a764c44681ab799bcae9776, type: 3}
 --- !u!1001 &1718888576
 PrefabInstance:
@@ -5628,7 +5667,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen4 (11)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8261462016078588118, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
 --- !u!1001 &1727084072
 PrefabInstance:
@@ -5965,7 +6005,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen5 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5433648144385542019, guid: 98cf862fd6ec06341b813f74c54af10d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 98cf862fd6ec06341b813f74c54af10d, type: 3}
 --- !u!4 &1791138783 stripped
 Transform:
@@ -6037,7 +6078,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2367233365053407488, guid: 58e605a958f82514198814dd47268a09, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 58e605a958f82514198814dd47268a09, type: 3}
 --- !u!4 &1832591617 stripped
 Transform:
@@ -6099,7 +6141,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen4 (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8261462016078588118, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
 --- !u!1001 &1870450421
 PrefabInstance:
@@ -6156,7 +6199,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8272228187407873125, guid: b14540b09a764c44681ab799bcae9776, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b14540b09a764c44681ab799bcae9776, type: 3}
 --- !u!4 &1870450422 stripped
 Transform:
@@ -6228,7 +6272,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8272228187407873125, guid: b14540b09a764c44681ab799bcae9776, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b14540b09a764c44681ab799bcae9776, type: 3}
 --- !u!1001 &1887361576
 PrefabInstance:
@@ -6354,7 +6399,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen5 (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5433648144385542019, guid: 98cf862fd6ec06341b813f74c54af10d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 98cf862fd6ec06341b813f74c54af10d, type: 3}
 --- !u!1001 &1931705718
 PrefabInstance:
@@ -6411,7 +6457,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8272228187407873125, guid: b14540b09a764c44681ab799bcae9776, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b14540b09a764c44681ab799bcae9776, type: 3}
 --- !u!4 &1946674773 stripped
 Transform:
@@ -6478,7 +6525,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8272228187407873125, guid: b14540b09a764c44681ab799bcae9776, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b14540b09a764c44681ab799bcae9776, type: 3}
 --- !u!1001 &1995708370
 PrefabInstance:
@@ -6535,7 +6583,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8272228187407873125, guid: b14540b09a764c44681ab799bcae9776, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b14540b09a764c44681ab799bcae9776, type: 3}
 --- !u!1001 &2002421918
 PrefabInstance:
@@ -6592,7 +6641,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8272228187407873125, guid: b14540b09a764c44681ab799bcae9776, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b14540b09a764c44681ab799bcae9776, type: 3}
 --- !u!4 &2009716086 stripped
 Transform:
@@ -6894,7 +6944,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobTreeGreen4 (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8261462016078588118, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c87883a4e75b2642956923c1e6891f4, type: 3}
 --- !u!4 &2081359076 stripped
 Transform:

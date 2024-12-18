@@ -44,7 +44,7 @@ public class FlotageController : MonoBehaviour
 
     void Update()
     {
-        FlattenPosition();
+        // FlattenPosition();
         _currentVelocity = _velocityInput;
         _velocityInput = Vector3.zero;
     }

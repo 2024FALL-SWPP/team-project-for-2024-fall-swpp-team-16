@@ -20,8 +20,9 @@ public class WaterController : MonoBehaviour
     [SerializeField] private Transform waterSurface;
     [Tooltip("Ratio of exposed water surface area to the top surface area of the bounds.\n" +
              "The smaller the value, the more sensitive the water level.")]
-    [SerializeField, Range(0.05f, 1f)] private float exposedSurfaceRatio = 0.2f;
+    [SerializeField, Range(0.01f, 1f)] private float exposedSurfaceRatio = 0.2f;
     [SerializeField] private bool interactable = true;
+    [SerializeField] private List<Transform> flotages = new();
     
     [SerializeField, Range(0f, 3f)] private float smoothTime = 0.5f; // Approximately the time it will take to reach the target water level
     private Vector3 _currentVelocity = Vector3.zero;
@@ -66,6 +67,7 @@ public class WaterController : MonoBehaviour
         SetWaterSurfacePosition();
         SetWaterSurfaceSize();
         SetWaterCollider();
+        SetFlotagePositions();
     }
 
     private void Start()
@@ -76,8 +78,19 @@ public class WaterController : MonoBehaviour
     private void Update()
     {
         CheckPlayerCollision();
+        SetFlotagePositions();
         if (interactable) _waterSinkHandler.Handle();
         SmoothApplyWaterSurfacePosition();
+    }
+
+    private void SetFlotagePositions()
+    {
+        foreach (var flotage in flotages)
+        {
+            var flattenPosition = flotage.position;
+            flattenPosition.y = waterSurface.position.y;
+            flotage.position = flattenPosition;
+        }
     }
 
     // Check for collisions with player

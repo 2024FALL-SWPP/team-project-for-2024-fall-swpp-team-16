@@ -54,7 +54,7 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
-        UpdateInventoryUI();
+        Invoke("UpdateInventoryUI", 0.1f);
     }
     
     public void UpdateInventoryUI()
@@ -62,13 +62,7 @@ public class InventoryManager : MonoBehaviour
         // update inventory UI text
         if (scoreText != null)
         {
-            // count collected scores
-            int collectedScores = 0;
-            foreach (var hasTheScore in _scoreMap.Values)
-            {
-                if (hasTheScore) collectedScores++;
-            }
-            scoreText.text = $"{collectedScores}/{scores.Count}";
+            scoreText.text = $"{_collectedScores}/{scores.Count}";
 
             scoreText.color = HasAllScores() ? Color.yellow : Color.white;
         }

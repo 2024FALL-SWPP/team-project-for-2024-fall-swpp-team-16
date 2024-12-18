@@ -197,10 +197,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialSignUI: {fileID: 0}
-  textContent: "\uC22B\uC790\uD0A4\uB85C \uC74C\uC545\uC744 \uC5F0\uC8FC\uD560 \uC218
-    \uC788\uB2E4"
+  textContents: []
   imageWidth: 1500
   imageHeight: 800
+  guideImages: []
 --- !u!1 &6301709645292156157
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,6 +292,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8249878016619393226}
     m_Modifications:
+    - target: {fileID: 30941792, guid: 589485ec7b4b546f3938579ede0e2a8e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 018bb9820a5a7a0449d6667b2c878803, type: 2}
+    - target: {fileID: 30941792, guid: 589485ec7b4b546f3938579ede0e2a8e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 5727654025223188545, guid: 018bb9820a5a7a0449d6667b2c878803, type: 2}
+    - target: {fileID: 30941792, guid: 589485ec7b4b546f3938579ede0e2a8e, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1392622848452239268, guid: 589485ec7b4b546f3938579ede0e2a8e, type: 3}
       propertyPath: target
       value: 
@@ -396,6 +408,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8370546269156976802, guid: 589485ec7b4b546f3938579ede0e2a8e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 5727654025223188545, guid: 018bb9820a5a7a0449d6667b2c878803, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 589485ec7b4b546f3938579ede0e2a8e, type: 3}
 --- !u!224 &6529978778309977587 stripped
